@@ -5,23 +5,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz App</title>
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
     <link rel="icon" type="image/ico" href="img/favicon.ico">
     <script src="script.js"></script>
 
 </head>
 
-<body onload="render()">
+<body onload="init()">
 
-    <h1>Hallo Welt</h1>
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">A Quiz for Geeks</span>
+        </div>
+    </nav>
+    <div class="progress border-radius">
+        <div id="progressBar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%;">25%</div>
+    </div>
+    
+    <section class="container">
+        <aside class="col-md-4 bg-blue navbar-left">
+            <img src="img/logo 2.png" class="img-fluid rounded-start logo-left">
+            <div class="links-left">
+                <a onclick="startHtmlQuiz()" title="HTML-Quiz" href="#">HTML</a>
+                <a title="Platzhalter" href="#">CSS</a>
+                <a title="Platzhalter" href="#">JS</a>
+            </div>
+        </aside>
+        <main class="card quiz-card bg-whitesmoke">
+            <div id="startScreen" class="card-body bg-startscreen" > <!-- Startscreen disabled at start. -->
+                <div>
+                    <div class="text-center final-headline">
+                        Welcome to the Awesome Programmer Quiz
+                    </div>
+                    <div class="button-row">
+                        <button onclick="startGame()" id="restartButton" class="btn start-btn-text">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
 
-    <div class="card" style="width: 18rem;">
-        <img src="/img/education_640.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div id="endScreen" class="card-body circle-center" style="display: none"> <!-- Endscreen disabled at start. -->
+                <div class="endscreen-circle">
+                    <img class="endscreen-pic" src="img/Group 5.png">
+                    <div class="text-center final-headline">
+                        COMPLETE HTML QUIZ
+                    </div>
+                    <div class="text-center">
+                        <span class="score-text"><b>YOUR SCORE</b></span><b id="amountOfRightQuestions">XXX</b> / <b id="amountOfQuestions">XXXX</b>
+                    </div>
+                    <div class="button-row">
+                        <button title="Platzhalter" id="shareButton" class="btn btn-secondary">Share</button>
+                    </div>
+                    <div class="button-row">
+                        <button title="Neues Spiel starten" onclick="restartGame()" id="restartButton" class="btn start-btn-text">Replay</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="questionBody" class="card-body" style="display: none">
+                <h5 id="questionText" class="card-title">Frage</h5>
+                <div id="quizQuestions">
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                        <div class="card-align">
+                            <div id=answerButton class="card-body card-icons answer-btn answer-btn-color">A</div>
+                            <div id="answer_1" class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                        <div class="card-align">
+                            <div id=answerButton class="card-body card-icons answer-btn answer-btn-color">B</div>
+                            <div id="answer_2" class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+                        <div class="card-align">
+                            <div id=answerButton class="card-body card-icons answer-btn answer-btn-color">C</div>
+                            <div id="answer_3" class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                        <div class="card-align">
+                            <div id=answerButton class="card-body card-icons answer-btn answer-btn-color">D</div>
+                            <div id="answer_4" class="card-body">
+                                Antwort.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-footer">
+                    <span>
+                        <b id="questionNumber">1</b> von <b id="allQuestions"></b> Fragen
+                    </span>
+                    <button title="Nächste Frage" onclick="nextQuestion()" id="nextButton" class="next-circle disabled"><img class="next-icon" src="icons/chevron.forward@2x.png"></button>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <div class="dropup">
+        <button title="Click für mehr Quizzes" class="dropbtn">
+            <img src="img/logo 2.png" class="img-fluid rounded-start logo-bottom">
+        </button>
+        <div class="dropup-content">
+            <a onclick="startHtmlQuiz()" title="HTML-Quiz" href="#">HTML</a>
+            <a title="Platzhalter" href="#">CSS</a>
+            <a title="Platzhalter" href="#">JS</a>
         </div>
     </div>
 

@@ -1,0 +1,9 @@
+/* rubik-regular - latin */
+   @font-face {
+     font-family: 'Rubik';
+     font-style: normal;
+     font-weight: 400;
+     src: local(''),
+          url('/fonts/rubik-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('/fonts/rubik-v21-latin-regular.svg#Rubik') format('svg'); /* Legacy iOS */
+   }

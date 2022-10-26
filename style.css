@@ -1,0 +1,350 @@
+html {
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: url("img/background_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+    overflow: hidden;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    color: rgb(247, 247, 247);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: rgb(238, 232, 232);
+    transition: all 225ms ease-in-out;
+}
+
+/* Background settings */
+.progress-bar {
+    background-color:rgb(43, 110, 253); 
+}
+
+.bg-blue {
+    background-color: rgb(43, 110, 253);
+}
+
+.bg-whitesmoke {
+    background-color:  rgb(247, 247, 247);
+}
+
+.bg-startscreen {
+    background-image: url("img/bg\ b.png");
+    background-size: contain;
+    height: 100%;
+    background-position: center;
+    padding: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button settings */  
+.quiz-questions-lock { /* Locked after clicking */
+    pointer-events: none;
+}
+
+.bg-danger { /* Overwrite Bootstrap settings. */
+    background-color: rgb(248, 78, 19)!important;
+    opacity: 90%!important;
+}
+
+.bg-success { /* Overwrite Bootstrap settings. */
+    background-color: rgb(78, 191, 24)!important;
+    opacity: 90%!important;
+}
+
+.btn-secondary {
+    background-color: rgb(248, 78, 19)!important;
+    border-color: rgb(248, 78, 19)!important;
+    width: 150px;
+}
+
+/* Startscreen and endscreen settings */
+.startscreen-pic {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endscreen-circle {
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+    background-color: rgb(248, 213, 187);
+    opacity: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.endscreen-pic {
+    height: 100px;
+}
+
+.score-text {
+    color: rgb(43, 110, 253);
+    padding-right: 20px;
+}
+
+.start-btn-text {
+    color: rgb(248, 78, 19);
+}
+
+/* Quiz card settings */  
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden!important;
+}
+
+.container-fluid {
+    justify-content: center!important; /* Overwrite Bootstrap settings. */
+}
+
+.quiz-card {
+    width: 30rem;
+    border-radius: 0px;
+    height: 400px;
+
+}
+
+.question-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.05)
+}
+
+.bg-success, .bg-danger {
+    color: white;
+}
+
+.card { /* Overwrite Bootstrap settings. */
+    border-radius: 0;
+}
+
+.card-align {
+    display: flex;
+    align-items: center;
+}
+
+.card-body { /* Overwrite Bootstrap settings. */
+    flex: none;
+}
+
+.next-circle {
+    padding: 10px;
+    background-color: rgb(216, 218, 220);
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 0;
+}
+
+.circle-center {
+    display: flex;
+    justify-content: center;
+}
+
+.next-icon {
+    height: 15px;
+}
+
+.answer-btn-color {
+    background-color: rgb(216, 218, 220);
+}
+
+.right-answer-btn {
+    background-color: green!important;
+}
+
+.answer-btn {
+    padding: 10px;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sidebar settings */  
+.navbar-left {
+    height: 400px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-left{
+
+    height: 80px;
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.links-left {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.border-radius {
+    border-radius: 0;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.final-headline {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+/* Dropdown-Menu */
+.logo-bottom {
+    height: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dropbtn {
+    background-color:rgb(43, 110, 253)!important;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+.dropup-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropup-content a:hover {
+    background-color: rgb(226, 223, 223)
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.dropup:hover .dropbtn {
+    background-color: #2980B9;
+}
+
+ /* Responsive design */
+@media (max-width: 500px) {
+    .quiz-card {
+        height: 450px!important;
+        justify-content: center!important;
+    }
+
+    .navbar-left {
+        height: 450px!important;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        background-image: unset;
+        background-color:rgb(43, 110, 253)!important; 
+        opacity: 100%;       
+    }
+
+    .progress-bar {
+        background-color: rgb(78, 191, 24)!important;
+    }
+
+    .bg-whitesmoke {
+        background-color: rgb(43, 110, 253)!important;
+        border: 0;
+    }
+
+    .container {
+        height: unset;
+    }
+
+    .navbar-left {
+        display: none;
+    }
+
+    .quiz-card {
+        text-align: center!important;
+    }
+
+    .card-title {
+        color:white;
+    }
+
+    .circle-endscreen {
+        border-radius: unset;
+        height: 100%;
+    }
+
+    .question-footer {
+        color:white;
+    }
+
+    .dropup {
+        display: flex;
+        justify-content: center;
+    }
+}
