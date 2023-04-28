@@ -1,49 +1,4 @@
-// HTML-Questions (first quiz).
-let questions = [
-    {
-        "questionQuiz": "Who invented HTML?",
-        "answer_1": "Bill Gates",
-        "answer_2": "Lucy Liu",
-        "answer_3": "Tim Berners-Lee",
-        "answer_4": "Sergey Brin",
-        "rightAnswer": 3
-    },
-    {
-        "questionQuiz": "Which tags are examples of 'value' attributes?",
-        "answer_1": "'li', 'input', 'option'",
-        "answer_2": "'input', 'option', 'textarea'",
-        "answer_3": "'input', 'label', 'meter'",
-        "answer_4": "'button', 'input', 'form'",
-        "rightAnswer": 1
-    },
-    {
-        "questionQuiz": "The best examples of void elements?",
-        "answer_1": "'iframe', 'frame', and 'frameset'",
-        "answer_2": "'frame'",
-        "answer_3": "'frame' and 'frameset'",
-        "answer_4": "'iframe'",
-        "rightAnswer": 4
-    },
-    {
-        "questionQuiz": "The best way to apply bold styling to text?",
-        "answer_1": "'strong'",
-        "answer_2": "Use CSS",
-        "answer_3": "'b'",
-        "answer_4": "'bold'",
-        "rightAnswer": 1
-    },
-    {
-        "questionQuiz": "What is NOT a valid attribute for the 'textarea'?",
-        "answer_1": "'readonly'",
-        "answer_2": "'max'",
-        "answer_3": "'form'",
-        "answer_4": "'spellcheck'",
-        "rightAnswer": 2
-    }
-];
-
-
-// Auxiliary variables (initial value of 0).
+let questions = [];
 let rightQuestions = 0;
 let currentQuestion = 0;
 
@@ -55,7 +10,9 @@ let AUDIO_FINISH = new Audio('audio/applause.mp3');
 
 
 // Initialize when page is loaded.
-function init() {
+async function init() {
+    let response = await fetch('./js/quiz_one.json');
+    questions = await response.json();
     document.getElementById('allQuestions').innerHTML = questions.length; // Defines the number of the questions.
     showQuestion(); // Shows the questions. 
 }
@@ -104,7 +61,7 @@ function resetProgressBar(){
 function updateToNextQuestion(){
     let question = questions[currentQuestion]; 
     document.getElementById('questionNumber').innerHTML = currentQuestion + 1;
-    document.getElementById('questionText').innerHTML = question['questionQuiz'];
+    document.getElementById('questionText').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
